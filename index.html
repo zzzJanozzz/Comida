@@ -162,6 +162,7 @@
     @media(max-width:768px){.nav-links{display:none}section{padding:72px 5%}.contact-grid{grid-template-columns:1fr}.hero-title{font-size:clamp(2.2rem,10vw,3.5rem)}.rating-strip{justify-content:center;text-align:center}}
     @media(max-width:480px){.hero-actions{flex-direction:column;align-items:stretch}.btn-primary,.btn-secondary{justify-content:center}}
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
 <body>
 
@@ -171,19 +172,19 @@
     <a href="#nosotros">Nosotros</a>
     <a href="#ubicacion">Ubicación</a>
   </div>
-  <a href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="nav-wa" target="_blank" rel="noopener">📲 Pedir ahora</a>
+  <a id="nav-wa-btn" href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="nav-wa" target="_blank" rel="noopener">📲 Pedir ahora</a>
 </nav>
 
 <section class="hero" id="inicio">
   <div class="hero-content">
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Santa Rosa de Calamuchita · Córdoba</div>
-    <h1 class="hero-title">El sabor<br/>de <span>casa,</span><br/>listo para llevar.</h1>
-    <p class="hero-sub">Comida casera, abundante y a precios justos. Hacé tu pedido por WhatsApp y pasá a buscarlo en Calle 3 755.</p>
+    <div class="hero-badge" id="hero-badge"><span class="hero-badge-dot"></span>Santa Rosa de Calamuchita · Córdoba</div>
+    <h1 class="hero-title" id="hero-title">El sabor<br/>de <span>casa,</span><br/>listo para llevar.</h1>
+    <p class="hero-sub" id="hero-sub">Comida casera, abundante y a precios justos. Hacé tu pedido por WhatsApp y pasá a buscarlo en Calle 3 755.</p>
     <div class="hero-actions">
       <a href="#menu" class="btn-primary">🍽️ Ver el menú</a>
-      <a href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn-secondary" target="_blank" rel="noopener">💬 Pedir por WhatsApp</a>
+      <a id="hero-wa-btn" href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn-secondary" target="_blank" rel="noopener">💬 Pedir por WhatsApp</a>
     </div>
-    <div class="hero-stats">
+    <div class="hero-stats" id="hero-stats">
       <div class="hero-stat"><span class="hero-stat-icon">⭐</span><span class="hero-stat-text"><span class="hero-stat-num">9.2</span>puntuación local</span></div>
       <div class="hero-stat"><span class="hero-stat-icon">📍</span><span class="hero-stat-text">Calle 3 755, Villa Incor</span></div>
       <div class="hero-stat"><span class="hero-stat-icon">🏠</span><span class="hero-stat-text">Comida casera cordobesa</span></div>
@@ -207,13 +208,13 @@
   </div>
 </section>
 
-<div class="rating-strip reveal">
-  <div><div class="rating-big">9.2</div><div class="rating-stars">★★★★★</div><div class="rating-sub">Puntuación local promedio</div></div>
+<div class="rating-strip reveal" id="rating-strip">
+  <div><div class="rating-big" id="rating-score">9.2</div><div class="rating-stars">★★★★★</div><div class="rating-sub">Puntuación local promedio</div></div>
   <div style="max-width:420px">
-    <p style="font-size:1.15rem;font-weight:600;color:#fff;margin-bottom:8px;font-family:'Syne',sans-serif">"La mejor relación calidad–precio de la zona"</p>
-    <p style="font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.6">Porciones generosas, precios justos y el sabor de la comida de siempre. Por eso nuestros clientes vuelven.</p>
+    <p id="rating-quote" style="font-size:1.15rem;font-weight:600;color:#fff;margin-bottom:8px;font-family:'Syne',sans-serif">"La mejor relación calidad–precio de la zona"</p>
+    <p id="rating-body" style="font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.6">Porciones generosas, precios justos y el sabor de la comida de siempre. Por eso nuestros clientes vuelven.</p>
   </div>
-  <a href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn-secondary" style="border-color:rgba(255,255,255,0.3);color:#fff" target="_blank" rel="noopener">Hacer mi pedido →</a>
+  <a id="rating-wa-btn" href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="btn-secondary" style="border-color:rgba(255,255,255,0.3);color:#fff" target="_blank" rel="noopener">Hacer mi pedido →</a>
 </div>
 
 <section class="why-section" id="nosotros">
@@ -222,7 +223,7 @@
     <h2 class="section-title">Comida de barrio,<br/>calidad de restorán.</h2>
     <p class="section-sub">Lo que nos diferencia no es el marketing — es lo que está en el plato.</p>
   </div>
-  <div class="why-grid">
+  <div class="why-grid" id="why-grid">
     <div class="why-card reveal"><div class="why-icon">🫙</div><h3>Porciones abundantes</h3><p>Nunca vas a quedar con hambre. Servimos como en casa — con la generosidad de siempre.</p></div>
     <div class="why-card reveal"><div class="why-icon">🪙</div><h3>Precios justos</h3><p>Comida rica y en cantidad no tiene por qué ser cara. Así lo entendemos nosotros.</p></div>
     <div class="why-card reveal"><div class="why-icon">🥬</div><h3>Ingredientes frescos</h3><p>Compramos y preparamos a diario. Sin congelados, sin atajos — el sabor se nota.</p></div>
@@ -240,21 +241,23 @@
   <div class="contact-grid">
     <div class="contact-card-map reveal">
       <h3><span class="contact-icon">📍</span>Encuéntranos en el mapa</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.8261485789093!2d-64.5370502!3d-32.0825436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2bb4b13c80831%3A0x5e3f200d15bd900d!2sRocha's%20rotiseria!5e0!3m2!1ses!2sar!4v1709567490000" width="100%" height="300" style="border:0;border-radius:var(--radius);margin-bottom:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <div class="address-line"><span class="address-line-icon">🏠</span><div><strong style="color:var(--c-cream);display:block">Calle 3 755 (entre 14 y 16)</strong><span>Santa Rosa de Calamuchita<br/>Córdoba, Argentina</span></div></div>
-      <div class="address-line"><span class="address-line-icon">📱</span><div><strong style="color:var(--c-cream);display:block">WhatsApp</strong><a href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" style="color:var(--c-orange)">Hacé tu pedido</a></div></div>
-      <div class="address-line"><span class="address-line-icon">📸</span><div><strong style="color:var(--c-cream);display:block">Instagram</strong><a href="https://instagram.com/rochasrotiseria" target="_blank" style="color:var(--c-orange)">@rochasrotiseria</a></div></div>
-      <a href="https://maps.app.goo.gl/QmARWF93kgw1FR8C9" target="_blank" rel="noopener" class="map-link">🗺️ Abrir en Google Maps</a>
+      <iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.8261485789093!2d-64.5370502!3d-32.0825436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2bb4b13c80831%3A0x5e3f200d15bd900d!2sRocha's%20rotiseria!5e0!3m2!1ses!2sar!4v1709567490000" width="100%" height="300" style="border:0;border-radius:var(--radius);margin-bottom:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="address-line" id="address-line"><span class="address-line-icon">🏠</span><div><strong style="color:var(--c-cream);display:block">Calle 3 755 (entre 14 y 16)</strong><span>Santa Rosa de Calamuchita<br/>Córdoba, Argentina</span></div></div>
+      <div class="address-line" id="wa-contact-line"><span class="address-line-icon">📱</span><div><strong style="color:var(--c-cream);display:block">WhatsApp</strong><a href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" style="color:var(--c-orange)">Hacé tu pedido</a></div></div>
+      <div class="address-line" id="ig-contact-line"><span class="address-line-icon">📸</span><div><strong style="color:var(--c-cream);display:block">Instagram</strong><a href="https://instagram.com/rochasrotiseria" target="_blank" style="color:var(--c-orange)">@rochasrotiseria</a></div></div>
+      <a id="maps-link" href="https://maps.app.goo.gl/QmARWF93kgw1FR8C9" target="_blank" rel="noopener" class="map-link">🗺️ Abrir en Google Maps</a>
     </div>
     <div class="contact-card reveal">
       <h3><span class="contact-icon">🕐</span>Horarios de atención</h3>
-      <div class="schedule-row"><span class="schedule-day">Lunes</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
-      <div class="schedule-row"><span class="schedule-day">Martes</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
-      <div class="schedule-row"><span class="schedule-day">Miércoles</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
-      <div class="schedule-row"><span class="schedule-day">Jueves</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
-      <div class="schedule-row"><span class="schedule-day">Viernes</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
-      <div class="schedule-row"><span class="schedule-day">Sábado</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
-      <div class="schedule-row"><span class="schedule-day">Domingo</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
+      <div id="schedule-list">
+        <div class="schedule-row"><span class="schedule-day">Lunes</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
+        <div class="schedule-row"><span class="schedule-day">Martes</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
+        <div class="schedule-row"><span class="schedule-day">Miércoles</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
+        <div class="schedule-row"><span class="schedule-day">Jueves</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
+        <div class="schedule-row"><span class="schedule-day">Viernes</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
+        <div class="schedule-row"><span class="schedule-day">Sábado</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
+        <div class="schedule-row"><span class="schedule-day">Domingo</span><span class="schedule-hours">11:30–15:00 · 20:30–00:30</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -365,115 +368,257 @@
 <a href="https://wa.me/543546488351?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Rocha's%20Rotiser%C3%ADa" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
 <script>
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  SUPABASE CONFIG
+  // ═══════════════════════════════════════════════════════════════════════════
+  const SB_URL='https://pupnmwaydhycxqgodsqa.supabase.co';
+  const SB_KEY='sb_publishable_flOKWX7GPyX0S9LBBEZrfA_j3bvPLOc';
+  const SB_USER='rochas';
+  const sb=window.supabase.createClient(SB_URL,SB_KEY);
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  SCROLL REVEAL + NAV
+  // ═══════════════════════════════════════════════════════════════════════════
+  function initReveal(){
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
+  initReveal();
   const nav=document.querySelector('.nav');
   window.addEventListener('scroll',()=>{
     nav.style.background=window.scrollY>60?'rgba(14,10,7,0.97)':'rgba(14,10,7,0.88)';
   },{passive:true});
-  // ── Cart ──────────────────────────────────────────────────────────────────
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  CART (unchanged logic)
+  // ═══════════════════════════════════════════════════════════════════════════
   const cart={};
-  const WA_NUM='543546488351';
+  let WA_NUM='543546488351';
+  function waUrl(num,text){return'https://wa.me/'+num+'?text='+encodeURIComponent(text);}
   function changeQty(btn,delta){
-    const card=btn.closest('.menu-card');
-    const name=card.dataset.item;
-    const numEl=card.querySelector('.qty-num');
-    let q=parseInt(numEl.textContent)||0;
-    q=Math.max(0,q+delta);
-    numEl.textContent=q;
-    if(q>0) cart[name]=q; else delete cart[name];
-    updateBadge();
-    numEl.animate([{transform:'scale(1.4)',color:'var(--c-orange)'},{transform:'scale(1)',color:''}],{duration:220,easing:'ease-out'});
+    const card=btn.closest('.menu-card');const name=card.dataset.item;
+    const numEl=card.querySelector('.qty-num');let q=parseInt(numEl.textContent)||0;
+    q=Math.max(0,q+delta);numEl.textContent=q;
+    if(q>0)cart[name]=q;else delete cart[name];
+    updateBadge();numEl.animate([{transform:'scale(1.4)',color:'var(--c-orange)'},{transform:'scale(1)',color:''}],{duration:220,easing:'ease-out'});
   }
   function updateBadge(){
     const total=Object.values(cart).reduce((s,v)=>s+v,0);
-    const badge=document.getElementById('cart-badge');
-    badge.textContent=total;
-    badge.classList.toggle('show',total>0);
+    const badge=document.getElementById('cart-badge');badge.textContent=total;badge.classList.toggle('show',total>0);
   }
   function buildMenuFilters(){
-    const wrap=document.querySelector('.menu-filters');
-    if(!wrap) return;
+    const wrap=document.querySelector('.menu-filters');if(!wrap)return;
     const categories=[...new Set([...document.querySelectorAll('.menu-card-cat')].map(el=>el.textContent.trim()).filter(Boolean))];
     wrap.innerHTML='';
-
-    const createBtn=(label,category,isActive=false)=>{
-      const btn=document.createElement('button');
-      btn.className=`filter-btn${isActive?' active':''}`;
-      btn.textContent=label;
-      btn.onclick=()=>filterMenu(category,btn);
-      return btn;
-    };
-
+    const createBtn=(label,category,isActive)=>{const btn=document.createElement('button');btn.className='filter-btn'+(isActive?' active':'');btn.textContent=label;btn.onclick=()=>filterMenu(category,btn);return btn;};
     wrap.appendChild(createBtn('Todos','all',true));
-    categories.forEach(category=>wrap.appendChild(createBtn(category,category,false)));
+    categories.forEach(c=>wrap.appendChild(createBtn(c,c,false)));
   }
-  function filterMenu(category, btn){
-    const cards=document.querySelectorAll('.menu-card');
-    const btns=document.querySelectorAll('.filter-btn');
-    btns.forEach(b=>b.classList.remove('active'));
-    if(btn) btn.classList.add('active');
-    cards.forEach(card=>{
-      if(category==='all') card.style.display='';
-      else {
-        const cardCat=card.querySelector('.menu-card-cat').textContent.trim();
-        card.style.display=cardCat===category?'':'none';
-      }
-    });
+  function filterMenu(category,btn){
+    const cards=document.querySelectorAll('.menu-card');const btns=document.querySelectorAll('.filter-btn');
+    btns.forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');
+    cards.forEach(card=>{if(category==='all')card.style.display='';else{const cc=card.querySelector('.menu-card-cat').textContent.trim();card.style.display=cc===category?'':'none';}});
   }
-  function openTerms(e){
-    e.preventDefault();
-    document.getElementById('terms-overlay').classList.add('open');
-    document.getElementById('terms-modal').classList.add('open');
-  }
-  function closeTerms(){
-    document.getElementById('terms-overlay').classList.remove('open');
-    document.getElementById('terms-modal').classList.remove('open');
-  }
-  function openPrivacy(e){
-    e.preventDefault();
-    document.getElementById('privacy-overlay').classList.add('open');
-    document.getElementById('privacy-modal').classList.add('open');
-  }
-  function closePrivacy(){
-    document.getElementById('privacy-overlay').classList.remove('open');
-    document.getElementById('privacy-modal').classList.remove('open');
-  }
-  function openCart(){
-    renderCartPanel();
-    document.getElementById('cart-overlay').classList.add('open');
-    document.getElementById('cart-panel').classList.add('open');
-  }
-  function closeCart(){
-    document.getElementById('cart-overlay').classList.remove('open');
-    document.getElementById('cart-panel').classList.remove('open');
-  }
+  function openTerms(e){e.preventDefault();document.getElementById('terms-overlay').classList.add('open');document.getElementById('terms-modal').classList.add('open');}
+  function closeTerms(){document.getElementById('terms-overlay').classList.remove('open');document.getElementById('terms-modal').classList.remove('open');}
+  function openPrivacy(e){e.preventDefault();document.getElementById('privacy-overlay').classList.add('open');document.getElementById('privacy-modal').classList.add('open');}
+  function closePrivacy(){document.getElementById('privacy-overlay').classList.remove('open');document.getElementById('privacy-modal').classList.remove('open');}
+  function openCart(){renderCartPanel();document.getElementById('cart-overlay').classList.add('open');document.getElementById('cart-panel').classList.add('open');}
+  function closeCart(){document.getElementById('cart-overlay').classList.remove('open');document.getElementById('cart-panel').classList.remove('open');}
   function renderCartPanel(){
-    const list=document.getElementById('cart-items-list');
-    const keys=Object.keys(cart).filter(k=>cart[k]>0);
+    const list=document.getElementById('cart-items-list');const keys=Object.keys(cart).filter(k=>cart[k]>0);
     if(!keys.length){list.innerHTML='<p class="cart-empty">Todavía no agregaste nada.<br/>Usá los botones + del menú.</p>';return;}
     list.innerHTML=keys.map(name=>`<div class="cart-item"><span class="cart-item-name">${name}</span><div class="cart-item-qty"><button onclick="panelQty('${name}',-1)">−</button><span>${cart[name]}</span><button onclick="panelQty('${name}',1)">+</button></div></div>`).join('');
   }
   function panelQty(name,delta){
-    cart[name]=Math.max(0,(cart[name]||0)+delta);
-    if(cart[name]===0) delete cart[name];
-    // sync card
+    cart[name]=Math.max(0,(cart[name]||0)+delta);if(cart[name]===0)delete cart[name];
     document.querySelectorAll('.menu-card').forEach(c=>{if(c.dataset.item===name)c.querySelector('.qty-num').textContent=cart[name]||0;});
-    updateBadge();
-    renderCartPanel();
+    updateBadge();renderCartPanel();
   }
   function sendCartWA(){
-    const keys=Object.keys(cart).filter(k=>cart[k]>0);
-    if(!keys.length){alert('Agregá items antes de enviar.');return;}
+    const keys=Object.keys(cart).filter(k=>cart[k]>0);if(!keys.length){alert('Agregá items antes de enviar.');return;}
     const nombre=document.getElementById('cart-name').value.trim();
-    let msg='¡Hola! Quiero hacer un pedido:\n\n';
-    keys.forEach(k=>{msg+='• '+cart[k]+'x '+k+'\n';});
-    if(nombre) msg+='\nMi nombre: '+nombre;
-    msg+='\n\n¿Me confirmás disponibilidad y precio? ¡Gracias!';
+    let msg='¡Hola! Quiero hacer un pedido:\n\n';keys.forEach(k=>{msg+='• '+cart[k]+'x '+k+'\n';});
+    if(nombre)msg+='\nMi nombre: '+nombre;msg+='\n\n¿Me confirmás disponibilidad y precio? ¡Gracias!';
     window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank');
   }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  RENDER HELPERS
+  // ═══════════════════════════════════════════════════════════════════════════
+  function renderMenu(items){
+    const grid=document.getElementById('menu-grid');
+    grid.innerHTML=items.map(item=>`
+      <div class="menu-card reveal" data-item="${item.nombre}">
+        <div class="menu-card-img">${item.image_url?`<img src="${item.image_url}" alt="${item.nombre}" loading="lazy"/>`:(item.emoji||'🍽️')}</div>
+        <div class="menu-card-body">
+          <span class="menu-card-cat">${item.categoria}</span>
+          <h3 class="menu-card-name">${item.nombre}</h3>
+          <p class="menu-card-desc">${item.descripcion||''}</p>
+          <div class="menu-card-footer">
+            <span class="menu-card-price">$${Number(item.precio).toLocaleString('es-AR')}</span>
+            <div class="qty-control">
+              <button class="qty-btn" onclick="changeQty(this,-1)">−</button>
+              <span class="qty-num">0</span>
+              <button class="qty-btn" onclick="changeQty(this,1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    buildMenuFilters();
+    initReveal();
+  }
+
+  function renderWhyCards(cards){
+    if(!cards||!cards.length)return;
+    const grid=document.getElementById('why-grid');
+    grid.innerHTML=cards.map(c=>`
+      <div class="why-card reveal"><div class="why-icon">${c.emoji||'✨'}</div><h3>${c.title}</h3><p>${c.description}</p></div>
+    `).join('');
+    initReveal();
+  }
+
+  function renderSchedule(schedules){
+    if(!schedules||!schedules.length)return;
+    const DAY_ORDER=['lun','mar','mie','jue','vie','sab','dom'];
+    const DAY_NAMES={lun:'Lunes',mar:'Martes',mie:'Miércoles',jue:'Jueves',vie:'Viernes',sab:'Sábado',dom:'Domingo'};
+    const sorted=DAY_ORDER.map(k=>schedules.find(s=>s.day_key===k)).filter(Boolean);
+    const el=document.getElementById('schedule-list');
+    el.innerHTML=sorted.map(s=>{
+      if(s.closed)return`<div class="schedule-row schedule-row--closed"><span class="schedule-day">${DAY_NAMES[s.day_key]||s.day_key}</span><span class="schedule-hours">Cerrado</span></div>`;
+      let hours=[];
+      if(s.t1_active&&s.t1_open&&s.t1_close)hours.push(s.t1_open+'–'+s.t1_close);
+      if(s.t2_active&&s.t2_open&&s.t2_close)hours.push(s.t2_open+'–'+s.t2_close);
+      return`<div class="schedule-row"><span class="schedule-day">${DAY_NAMES[s.day_key]||s.day_key}</span><span class="schedule-hours">${hours.join(' · ')||'—'}</span></div>`;
+    }).join('');
+  }
+
+  function updateWaLinks(num){
+    if(!num)return;
+    WA_NUM=num;
+    const url=waUrl(num,'Hola, quiero hacer un pedido');
+    document.querySelectorAll('[id$="-wa-btn"]').forEach(el=>{el.href=url;});
+    const waFloat=document.querySelector('.wa-float');if(waFloat)waFloat.href=waUrl(num,'Hola, quiero hacer un pedido en Rocha\'s Rotisería');
+    const menuWa=document.querySelector('.menu-wa-cta .btn-primary');if(menuWa)menuWa.href=url;
+    const waContact=document.querySelector('#wa-contact-line a');if(waContact)waContact.href=url;
+    const socialWa=document.querySelector('.footer-social .social-btn[aria-label="WhatsApp"]');if(socialWa)socialWa.href=waUrl(num,'Hola, quiero hacer un pedido en Rocha\'s Rotisería');
+    const footerWa=document.querySelector('.footer-col a[href*="wa.me"]');if(footerWa)footerWa.href=url;
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  ANALYTICS TRACKER
+  // ═══════════════════════════════════════════════════════════════════════════
+  function detectDevice(){
+    const w=window.innerWidth;if(w<=768)return'mobile';if(w<=1024)return'tablet';return'desktop';
+  }
+  function detectSource(){
+    const ref=document.referrer||'';
+    if(ref.includes('google'))return'google';
+    if(ref.includes('instagram'))return'instagram';
+    if(ref.includes('facebook'))return'facebook';
+    if(ref.includes('wa.me')||ref.includes('whatsapp'))return'whatsapp';
+    return'direct';
+  }
+  let _clientId=null;
+  async function trackEvent(eventType){
+    if(!_clientId)return;
+    try{
+      await sb.from('page_events').insert({client_id:_clientId,event_type:eventType,source:detectSource(),device:detectDevice(),page_path:window.location.pathname});
+    }catch(e){/* silent */}
+  }
+  function setupTracking(clientId){
+    _clientId=clientId;
+    trackEvent('page_view');
+    document.querySelectorAll('[id$="-wa-btn"],.wa-float,.menu-wa-cta .btn-primary,.footer-social .social-btn[aria-label="WhatsApp"],.footer-col a[href*="wa.me"],#wa-contact-line a').forEach(el=>{
+      el.addEventListener('click',()=>trackEvent('whatsapp_click'));
+    });
+    const mapsLink=document.getElementById('maps-link');if(mapsLink)mapsLink.addEventListener('click',()=>trackEvent('maps_click'));
+    document.querySelectorAll('a[href*="instagram"]').forEach(el=>{el.addEventListener('click',()=>trackEvent('instagram_click'));});
+    document.querySelectorAll('.social-btn[aria-label="Facebook"]').forEach(el=>{el.addEventListener('click',()=>trackEvent('facebook_click'));});
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  MAIN LOADER — fetch from Supabase and hydrate the page
+  // ═══════════════════════════════════════════════════════════════════════════
+  (async function loadSite(){
+    try{
+      // 1. Get client data
+      const{data:client}=await sb.from('clients').select('*').eq('username',SB_USER).single();
+      if(!client){console.warn('Client not found');return;}
+
+      // 2. Parallel fetch
+      const[menuRes,whyRes,schedRes]=await Promise.all([
+        sb.from('menu_items').select('*').eq('client_id',client.id).eq('activo',true).eq('disponible',true).order('sort_order',{ascending:true}),
+        sb.from('why_cards').select('*').eq('client_id',client.id).order('sort_order',{ascending:true}),
+        sb.from('schedules').select('*').eq('client_id',client.id),
+      ]);
+
+      // 3. Update Hero
+      if(client.hero_badge){
+        const hb=document.getElementById('hero-badge');
+        hb.innerHTML='<span class="hero-badge-dot"></span>'+client.hero_badge;
+      }
+      if(client.hero_title&&client.hero_title_highlight){
+        document.getElementById('hero-title').innerHTML=client.hero_title+'<br/><span>'+client.hero_title_highlight+'</span>';
+      }
+      if(client.hero_subtitle)document.getElementById('hero-sub').textContent=client.hero_subtitle;
+
+      // 4. Update Rating
+      if(client.rating_score)document.getElementById('rating-score').textContent=client.rating_score;
+      if(client.rating_quote)document.getElementById('rating-quote').textContent='"'+client.rating_quote+'"';
+      if(client.rating_quote_body)document.getElementById('rating-body').textContent=client.rating_quote_body;
+
+      // 5. Update Hero stats
+      const statsEl=document.getElementById('hero-stats');
+      statsEl.innerHTML=`
+        <div class="hero-stat"><span class="hero-stat-icon">⭐</span><span class="hero-stat-text"><span class="hero-stat-num">${client.rating_score||'9.2'}</span>puntuación local</span></div>
+        <div class="hero-stat"><span class="hero-stat-icon">📍</span><span class="hero-stat-text">${client.address||'Calle 3 755, Villa Incor'}</span></div>
+        <div class="hero-stat"><span class="hero-stat-icon">🏠</span><span class="hero-stat-text">${client.tagline||'Comida casera cordobesa'}</span></div>
+      `;
+
+      // 6. Update contact info
+      if(client.whatsapp)updateWaLinks(client.whatsapp);
+      if(client.address){
+        const addrEl=document.getElementById('address-line');
+        addrEl.innerHTML=`<span class="address-line-icon">🏠</span><div><strong style="color:var(--c-cream);display:block">${client.address}</strong><span>${client.city||'Santa Rosa de Calamuchita, Córdoba'}</span></div>`;
+      }
+      if(client.instagram){
+        const igEl=document.getElementById('ig-contact-line');
+        igEl.innerHTML=`<span class="address-line-icon">📸</span><div><strong style="color:var(--c-cream);display:block">Instagram</strong><a href="https://instagram.com/${client.instagram}" target="_blank" style="color:var(--c-orange)">@${client.instagram}</a></div>`;
+        const igSocial=document.querySelector('.social-btn[aria-label="Instagram"]');if(igSocial)igSocial.href='https://instagram.com/'+client.instagram;
+      }
+      if(client.facebook){
+        const fbSocial=document.querySelector('.social-btn[aria-label="Facebook"]');if(fbSocial)fbSocial.href=client.facebook;
+      }
+      if(client.google_maps_short){
+        const mapsEl=document.getElementById('maps-link');if(mapsEl)mapsEl.href=client.google_maps_short;
+      }
+      if(client.google_maps_embed){
+        const iframe=document.getElementById('map-iframe');if(iframe)iframe.src=client.google_maps_embed;
+      }
+
+      // 7. Render dynamic sections
+      if(menuRes.data&&menuRes.data.length)renderMenu(menuRes.data);
+      if(whyRes.data&&whyRes.data.length)renderWhyCards(whyRes.data);
+      if(schedRes.data&&schedRes.data.length)renderSchedule(schedRes.data);
+
+      // 8. Update page title
+      if(client.business_name)document.title=client.business_name+' · '+(client.tagline||'Comida casera');
+
+      // 9. Start analytics tracking
+      setupTracking(client.id);
+
+      // 10. Update badge
+      updateBadge();
+
+    }catch(err){
+      console.error('[Rochas] Error loading from Supabase:',err);
+      // Fallback: the static HTML content stays visible
+    }
+  })();
 </script>
 </body>
 </html>
