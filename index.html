@@ -26,15 +26,15 @@
     .reveal.visible{opacity:1;transform:none}
     .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(14,10,7,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);transition:background 0.3s}
     .nav-logo{font-family:var(--ff-head);font-size:1.25rem;font-weight:800;color:var(--c-cream);letter-spacing:-0.02em;display:flex;align-items:center}
-    .nav-logo img{height:36px;width:auto;object-fit:contain}
+    .nav-logo img{height:48px;width:auto;object-fit:contain}
     .nav-links{display:flex;align-items:center;gap:28px}
     .nav-links a{font-size:0.82rem;font-weight:500;color:var(--c-muted);transition:color 0.2s;letter-spacing:0.04em;text-transform:uppercase}
     .nav-links a:hover{color:var(--c-cream)}
     .nav-wa{display:inline-flex;align-items:center;gap:7px;background:var(--c-orange);color:#fff;font-size:0.78rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;padding:8px 18px;border-radius:100px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s}
     .nav-wa:hover{filter:brightness(0.85);transform:translateY(-1px)}
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:80px 5% 60px}
-    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(234,88,12,0.18) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 70%,rgba(217,119,6,0.12) 0%,transparent 70%),var(--c-bg);z-index:0}
-    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,10,7,0.55) 0%,rgba(14,10,7,0.85) 100%);pointer-events:none}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(234,88,12,0.18) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 70%,rgba(217,119,6,0.12) 0%,transparent 70%),var(--c-bg);background-size:cover;background-position:center;z-index:0}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(234,88,12,0.35) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 70%,rgba(217,119,6,0.25) 0%,transparent 70%),linear-gradient(to bottom,rgba(14,10,7,0.6) 0%,rgba(14,10,7,0.92) 100%);pointer-events:none}
     .hero-content{position:relative;z-index:2;max-width:760px;text-align:center}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(234,88,12,0.12);border:1px solid rgba(234,88,12,0.3);border-radius:100px;padding:6px 16px;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--c-orange-l);margin-bottom:28px;animation:fadeUp 0.7s ease both}
     .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--c-orange-l);animation:pulse 2s ease infinite}
@@ -577,15 +577,13 @@
       // 3b. Logo
       if(client.logo_url){
         const logoEl=document.getElementById('nav-logo');
-        logoEl.innerHTML='<img src="'+client.logo_url+'" alt="'+( client.business_name||'Logo')+'" style="height:36px;width:auto;"/>';
+        logoEl.innerHTML='<img src="'+client.logo_url+'" alt="'+( client.business_name||'Logo')+'"/>';
       }
 
-      // 3c. Hero background image
+      // 3c. Hero background image (blended with orange gradient overlay)
       if(client.hero_url){
         const heroBg=document.getElementById('hero-bg');
-        heroBg.style.backgroundImage='url('+client.hero_url+')';
-        heroBg.style.backgroundSize='cover';
-        heroBg.style.backgroundPosition='center';
+        heroBg.style.background='url('+client.hero_url+') center/cover no-repeat';
       }
 
       // 4. Update Rating
